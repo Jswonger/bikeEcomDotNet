@@ -1,17 +1,53 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<main class="mainContent">
+    <div class="contactmanager grey-card gridlayout-6">
+        <img src="@Url.Content("~/Content/images/manager.jpg")" alt="Manager">
+        <div>
+            <span>Manager: Robert DeSoto</span>
+        </div>
+        <div>
+            <span>Phone: 727-555-2323</span>
+        </div>
+        <div>
+            <span>Email: Desoto.Robert@gladiator.com</span>
+        </div>
+        <div>
+            <span>Address:</span>
+        </div>
+        <div>
+            <span>1212 Florida Ave.</span>
+        </div>
+        <div>
+            <span>Lakeland, Fl 33844</span>
+        </div>
+        <div>
+            <span>Store Hours:</span>
+        </div>
+        <div>
+            <span>[M - F] 11am - 6pm</span>
+        </div>
+        <div>
+            <span>[Sat - Sun] 10am - 7pm</span>
+        </div>
+    </div>
+    <div class="grey-card">
+        <form action="/contact" method="POST">
+            <div class="contactname">
+                <label for="name">Full Name</label><br>
+                <input type="text" name="name" id="name" value="" required>
+            </div>
+            <div class="contactemail">
+                <label for="email">Email</label><br>
+                <input type="email" name="email" id="email" value="" required>
+            </div>
+            <div class="contactarea">
+                <label for="desc">What can we help you with?</label><br>
+                <textarea name="desc" id="desc" required></textarea>
+            </div>
+            <button class="success-btn" type="submit">Send Infomation</button>
+        </form>
+    </div>
+</main>

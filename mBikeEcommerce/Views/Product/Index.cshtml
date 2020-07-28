@@ -1,0 +1,36 @@
+﻿@model IEnumerable<mBikeEcommerce.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<main class="mainContent">
+    <div class="gridlayout-6 gap">
+        <section class="filterview">
+            <span class="filterby">Filter By</span>
+            <a href="/product" class="grey-card">All Products</a>
+            <span class="bybrand">Brand</span>
+            <a href="/product/filter?cond=brand&name=trek" class="grey-card">Trek Bikes</a>
+            <a href="/product/filter?cond=brand&name=schwinn" class="grey-card">Schwinn Bikes</a>
+            <a href="/product/filter?cond=brand&name=giant" class="grey-card">Giant Bikes</a>
+            <span class="bytype">Type</span>
+            <a href="/product/filter?cond=type&name=mountain" class="grey-card">Mountain Bikes</a>
+            <a href="/product/filter?cond=type&name=cruiser" class="grey-card">Cruiser Bikes</a>
+            <a href="/product/filter?cond=type&name=road" class="grey-card">Road Bikes</a>
+        </section>
+        <section class="productview">
+            @foreach (var item in Model)
+            {
+                var priceStr = string.Format("{0:c}", item.price);
+                <a href="/product/details/@item.ID" class="grey-card">
+                    <div class="prodname">@Html.DisplayFor(modelItem => item.name)</div>
+                    <div class="prodbrand">@Html.DisplayFor(modelItem => item.brand)</div>
+                    <img src="@Url.Content(item.imgPath)" alt="">
+                    <span class="prodprice">@Html.DisplayFor(modelItem => priceStr)</span>
+                </a>
+            }
+        </section>
+    </div>
+</main>

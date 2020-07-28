@@ -7,13 +7,8 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
-    @Html.Partial("~/Views/Shared/_Navbar.cshtml")
-    <div>
-        @RenderBody()
-        @Html.Partial("~/Views/Shared/_Footer.cshtml")
-    </div>
-
+<body id="admin">
+    @RenderBody()
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

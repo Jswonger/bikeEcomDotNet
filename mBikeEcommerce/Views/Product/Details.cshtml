@@ -1,0 +1,27 @@
+﻿@model mBikeEcommerce.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<main class="mainContent">
+    <div class="gridlayout-6 gap">
+        <section class="productInfo grey-card">
+            <div class="pname">@Html.DisplayFor(model => model.name)</div>
+            <div class="pbrand">Brand: @Html.DisplayFor(model => model.brand)</div>
+            <div class="ptype">Type: @Html.DisplayFor(model => model.type)</div>
+            <div class="pdesc">Description:</div>
+            <div class="pardesc">@Html.DisplayFor(model => model.description)</div>
+
+        </section>
+        <section class="productImg grey-card">
+            <img src="@Url.Content(Model.imgPath)" alt="@Model.imgPath">
+            @{
+                var priceStr = string.Format("{0:c}", Model.price);
+                <div class="pprice">@priceStr</div>
+            }
+
+        </section>
+    </div>
+    @Html.ActionLink("Back to List", "Index")
+</main>

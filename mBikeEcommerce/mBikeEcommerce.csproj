@@ -175,12 +175,16 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="DAL\ProductContext.cs" />
+    <Compile Include="DAL\ProductInit.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -191,6 +195,25 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\bbb_accredited.png" />
+    <Content Include="Content\images\cruiserbike.jpg" />
+    <Content Include="Content\images\csg100.png" />
+    <Content Include="Content\images\download.jpg" />
+    <Content Include="Content\images\giant.jpg" />
+    <Content Include="Content\images\giantTCRAPro1.jpg" />
+    <Content Include="Content\images\inside.jpg" />
+    <Content Include="Content\images\logo4.png" />
+    <Content Include="Content\images\manager.jpg" />
+    <Content Include="Content\images\mBike.jpg" />
+    <Content Include="Content\images\mountainbike.jpg" />
+    <Content Include="Content\images\Norco_Range.jpg" />
+    <Content Include="Content\images\outside.jpg" />
+    <Content Include="Content\images\roadbike.jpg" />
+    <Content Include="Content\images\schwinnbrand.jpg" />
+    <Content Include="Content\images\schwinnClassic1.jpg" />
+    <Content Include="Content\images\trekbike.jpg" />
+    <Content Include="Content\images\trekMarlin5.jpg" />
+    <Content Include="Content\images\warrantyImage.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -332,7 +355,6 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper.js.flow" />
@@ -343,6 +365,14 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Navbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

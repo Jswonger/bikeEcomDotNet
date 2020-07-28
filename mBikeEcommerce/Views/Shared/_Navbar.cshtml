@@ -1,7 +1,8 @@
 ﻿<nav>
     <ul id="navContent" class="gridlayout-6">
         <img src="@Url.Content("~/Content/images/logo4.png")" alt="Gladiator Bicycles" class="navimage" />
-        <div class="navbutton home current">
+        @Html.Partial("~/Views/Shared/_NavbarLogin.cshtml")
+        <div class="navbutton home">
             <a href="/">Home</a>
         </div>
         <div class="navbutton products">

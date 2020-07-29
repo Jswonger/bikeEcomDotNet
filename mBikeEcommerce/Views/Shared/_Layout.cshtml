@@ -7,12 +7,12 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body class="mainContent">
+<body class="page-container gridlayout-1">
     @Html.Partial("~/Views/Shared/_Navbar.cshtml")
-    <div>
+    <main class="mainContent">
         @RenderBody()
-        @Html.Partial("~/Views/Shared/_Footer.cshtml")
-    </div>
+    </main>
+    @Html.Partial("~/Views/Shared/_Footer.cshtml")
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

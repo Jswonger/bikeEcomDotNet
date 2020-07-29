@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="admin">
+    <div class="container">
+        <h1 class="center-text">Dashboard for</h1>
+        <div class="row m-1">
+            <div class="col-sm-4"></div>
+            <form class="col-sm-4" action="/admin/addproduct" method="GET">
+                <button class="btn btn-primary btn-block" type="submit">Add Product</button>
+            </form>
+        </div>
+        <div class="row m-1">
+            <div class="col-sm-4"></div>
+            <form class="col-sm-4" action="/admin/viewproducts" method="GET">
+                <button class="btn btn-primary btn-block" type="submit">Edit/Delete Products</button>
+            </form>
+        </div>
+        <div class="row m-1">
+            <div class="col-sm-4"></div>
+            <form class="col-sm-4" action="/admin/viewcontactforms" method="GET">
+                <button class="btn btn-primary btn-block" type="submit">View Contact Forms</button>
+            </form>
+        </div>
+        <div class="row m-1">
+            <div class="col-sm-4"></div>
+            <form class="col-sm-4" action="/admin/register" method="GET">
+                <button class="btn btn-primary btn-block" type="submit">Register New Account</button>
+            </form>
+        </div>
+        <div class="row m-1">
+            <div class="col-sm-4"></div>
+            <form class="col-sm-4" action="/admin/viewaccounts" method="GET">
+                <button class="btn btn-primary btn-block" type="submit">Edit/Delete Accounts</button>
+            </form>
+        </div>
+        <div class="row m-1">
+            <div class="col-sm-4"></div>
+            <form class="col-sm-4" action="/admin/logout?_method=DELETE" method="POST">
+                <button class="btn btn-primary btn-block" type="submit">Logout</button>
+            </form>
+        </div>
+    </div>
+</div>

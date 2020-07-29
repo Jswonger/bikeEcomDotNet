@@ -3,63 +3,61 @@
 }
 
 
-<main class="mainContent">
-    <div>
-        <img src="@Url.Content("~/Content/images/Norco_Range.jpg")" alt="Mountain Bike" class="bikebanner" />
+<div>
+    <img src="@Url.Content("~/Content/images/Norco_Range.jpg")" alt="Mountain Bike" class="bikebanner" />
+</div>
+<div class="gridlayout-6">
+    <div class="warranty grey-card">
+        <img src="@Url.Content("~/Content/images/warrantyImage.png")" alt="30 Day warranty" class="warrantyImage" />
+        <p class="warrantyText">
+            At Gladiator Bicycles, our goods are covered by warranty policies
+            and return programs that ensure you can buy with confidence and enjoy
+            your purchase to the fullest. We offer 30 day return policy to ensure
+            that our customers enjoy their new bikes. No questions asked.
+        </p>
+
     </div>
-    <div class="gridlayout-6">
-        <div class="warranty grey-card">
-            <img src="@Url.Content("~/Content/images/warrantyImage.png")" alt="30 Day warranty" class="warrantyImage" />
-            <p class="warrantyText">
-                At Gladiator Bicycles, our goods are covered by warranty policies
-                and return programs that ensure you can buy with confidence and enjoy
-                your purchase to the fullest. We offer 30 day return policy to ensure
-                that our customers enjoy their new bikes. No questions asked.
-            </p>
-
+    <div class="shopby grey-card">
+        <div class="brandtext">Our Brands</div>
+        <div class="trek">
+            <a href="/product/filter?cond=brand&name=trek">
+                <img src="@Url.Content("~/Content/images/trekbike.jpg")" alt="Trek bike">
+                <p>Trek</p>
+            </a>
         </div>
-        <div class="shopby grey-card">
-            <div class="brandtext">Our Brands</div>
-            <div class="trek">
-                <a href="/product/filter?cond=brand&name=trek">
-                    <img src="@Url.Content("~/Content/images/trekbike.jpg")" alt="Trek bike">
-                    <p>Trek</p>
-                </a>
-            </div>
-            <div class="schwinn">
-                <a href="/product/filter?cond=brand&name=schwinn">
-                    <img src="@Url.Content("~/Content/images/schwinnbrand.jpg")" alt="Schwinn bike">
-                    <p>Schwinn</p>
-                </a>
-            </div>
-            <div class="giant">
-                <a href="/product/filter?cond=brand&name=giant">
-                    <img src="@Url.Content("~/Content/images/giant.jpg")" alt="Giant bike">
-                    <p>Giant</p>
-                </a>
-            </div>
+        <div class="schwinn">
+            <a href="/product/filter?cond=brand&name=schwinn">
+                <img src="@Url.Content("~/Content/images/schwinnbrand.jpg")" alt="Schwinn bike">
+                <p>Schwinn</p>
+            </a>
         </div>
-        <div class="shopby grey-card">
-            <div class="typetext">Our Types</div>
-            <div class="mountain">
-                <a href="/product/filter?cond=type&name=mountain">
-                    <img src="@Url.Content("~/Content/images/mountainbike.jpg")" alt="Trek bike">
-                    <p>Mountain Bikes</p>
-                </a>
-
-            </div>
-            <div class="cruiser">
-                <a href="/product/filter?cond=type&name=cruiser">
-                    <img src="@Url.Content("~/Content/images/cruiserbike.jpg")" alt="Schwinn bike">
-                    <p>Cruiser Bikes</p>
-                </a>
-            </div>
-            <div class="road">
-                <a href="/product/filter?cond=type&name=road">
-                    <img src="@Url.Content("~/Content/images/roadbike.jpg")" alt="Giant bike">
-                    <p>Road Bikes</p>
-                </a>
-            </div>
+        <div class="giant">
+            <a href="/product/filter?cond=brand&name=giant">
+                <img src="@Url.Content("~/Content/images/giant.jpg")" alt="Giant bike">
+                <p>Giant</p>
+            </a>
         </div>
     </div>
-</main>
+    <div class="shopby grey-card">
+        <div class="typetext">Our Types</div>
+        <div class="mountain">
+            <a href="/product/filter?cond=type&name=mountain">
+                <img src="@Url.Content("~/Content/images/mountainbike.jpg")" alt="Trek bike">
+                <p>Mountain Bikes</p>
+            </a>
+
+        </div>
+        <div class="cruiser">
+            <a href="/product/filter?cond=type&name=cruiser">
+                <img src="@Url.Content("~/Content/images/cruiserbike.jpg")" alt="Schwinn bike">
+                <p>Cruiser Bikes</p>
+            </a>
+        </div>
+        <div class="road">
+            <a href="/product/filter?cond=type&name=road">
+                <img src="@Url.Content("~/Content/images/roadbike.jpg")" alt="Giant bike">
+                <p>Road Bikes</p>
+            </a>
+        </div>
+    </div>
+</div>

@@ -35,6 +35,16 @@ body {
         display: none;
     }
 
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+main.mainContent {
+    grid-row: 2 / 3;
+    padding-top: 13vw;
+}
+
 a {
     display: inline-block;
     padding: 2%;
@@ -51,13 +61,15 @@ a:hover {
     text-decoration: none;
 }
 
-.mainContent {
-    margin-top: 13vw;
-}
-
 .gridlayout-6 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+}
+
+.gridlayout-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content auto;
 }
 
 .gap {
@@ -121,6 +133,7 @@ img {
 ** Navigation section
 */
 nav {
+    grid-row: 1 / 2;
     margin: 0;
     height: auto;
     width: 100%;
@@ -679,9 +692,9 @@ nav {
 ** Footer
 */
 footer {
-    margin-top: 1.5vw;
+    grid-row: 3 / 4;
+    margin-top: 2%;
     padding: 2vw;
-    padding-bottom: auto;
     font-size: 2vw;
     text-align: center;
     background-color: rgb(78, 78, 78);

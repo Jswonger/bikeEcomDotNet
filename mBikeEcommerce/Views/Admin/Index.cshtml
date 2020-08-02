@@ -33,15 +33,18 @@
         </div>
         <div class="row m-1">
             <div class="col-sm-4"></div>
-            <form class="col-sm-4" action="/admin/viewaccounts" method="GET">
+            <form class="col-sm-4" action="/admin/Editaccounts" method="GET">
                 <button class="btn btn-primary btn-block" type="submit">Edit/Delete Accounts</button>
             </form>
         </div>
         <div class="row m-1">
             <div class="col-sm-4"></div>
-            <form class="col-sm-4" action="/admin/logout?_method=DELETE" method="POST">
-                <button class="btn btn-primary btn-block" type="submit">Logout</button>
-            </form>
+            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "col-sm-4" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <a class="btn btn-primary btn-block" style="text-transform: capitalize;" href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+            }
         </div>
     </div>
 </div>

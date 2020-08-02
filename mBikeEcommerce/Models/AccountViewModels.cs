@@ -109,4 +109,11 @@ namespace mBikeEcommerce.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
+
+    public class UserRolesViewModel
+    {
+        public string RoleId { get; set; }
+        public string RoleName { get; set; }
+        public bool IsSelected { get; set; }
+    }
 }

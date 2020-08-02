@@ -1,0 +1,34 @@
+﻿@model List<mBikeEcommerce.Models.UserRolesViewModel>
+
+@{
+    ViewBag.Title = "Edit";
+    var userId = ViewBag.userId;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm("Edit", "Admin", new { userId = userId }, FormMethod.Post, null))
+{
+    <div class="card">
+        <div class="card-header">
+            <h2>Manage User Roles</h2>
+            @Html.ValidationSummary()
+        </div>
+        <div class="card-body">
+            @for(int i = 0; i < Model.Count(); i++)
+            {
+                <div class="form-check m-1">
+                    @Html.HiddenFor(m => Model[i].RoleId)
+                    @Html.HiddenFor(m => Model[i].RoleName)
+                    @Html.CheckBoxFor(m => Model[i].IsSelected, new { @class = "form-check-input" })
+                    @Html.LabelFor(m => Model[i].IsSelected, Model[i].RoleName , new { @class = "form-check-label" })
+                </div>
+            }
+        </div>
+        <div class="card-footer">
+            <input type="submit" value="Update" class="btn btn-primary" style="width:auto" />
+        </div>
+    </div>
+}

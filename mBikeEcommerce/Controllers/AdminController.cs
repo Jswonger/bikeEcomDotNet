@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -74,6 +75,39 @@ namespace mBikeEcommerce.Controllers
             return View();
         }
 
+        public ActionResult AddProduct()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddProduct(Product product, HttpPostedFileBase imgFile)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(product);
+            }
+
+            string filename = Path.GetFileName(imgFile.FileName);
+
+            var newImgPath = "~/Content/images/" + filename;
+
+            var newProduct = new Product { 
+                brand = product.brand, type = product.type, 
+                name = product.name, imgPath = newImgPath, price = product.price, 
+                description = product.description 
+            };
+
+            filename = Path.Combine(Server.MapPath("~/Content/images/" + filename));
+            imgFile.SaveAs(filename);
+
+            dbp.Products.Add(newProduct);
+            dbp.SaveChanges();
+
+            return RedirectToAction("ProductList");
+        }
+
         public ActionResult ProductList()
         {
             return View(dbp.Products.ToList());
@@ -99,7 +133,7 @@ namespace mBikeEcommerce.Controllers
         {
             if (id == null)
             {
-                return RedirectToAction("ProductList");
+                return RedirectToAction("DeleteProduct");
             }
             var product = await dbp.Products.FindAsync(id);
             if (product == null)
@@ -107,7 +141,7 @@ namespace mBikeEcommerce.Controllers
                 return HttpNotFound();
             }
             dbp.Products.Remove(product);
-            dbc.SaveChanges();
+            dbp.SaveChanges();
             return RedirectToAction("ProductList");
         }
 

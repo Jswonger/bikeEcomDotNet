@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace mBikeEcommerce.Models
 {
     public class Product
     {
-        [Required]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
         [Required]
@@ -23,8 +25,7 @@ namespace mBikeEcommerce.Models
         [StringLength(64)]
         public string name { get; set; }
 
-        [Required]
-        [StringLength(128)]
+        
         public string imgPath { get; set; }
 
         [Required]
@@ -33,5 +34,6 @@ namespace mBikeEcommerce.Models
         [Required]
         [StringLength(2028)]
         public string description { get; set; }
+
     }
 }

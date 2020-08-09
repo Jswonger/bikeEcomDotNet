@@ -1,4 +1,5 @@
-﻿using mBikeEcommerce.Models;
+﻿using mBikeEcommerce.DAL;
+using mBikeEcommerce.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System;
@@ -16,6 +17,9 @@ namespace mBikeEcommerce.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         private ApplicationRoleManager _roleManager;
+
+        private ProductContext dbp = new ProductContext();
+        private ContactContext dbc = new ContactContext();
 
         public AdminController()
         {
@@ -70,6 +74,80 @@ namespace mBikeEcommerce.Controllers
             return View();
         }
 
+        public ActionResult ProductList()
+        {
+            return View(dbp.Products.ToList());
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> DeleteProduct(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("ProductList");
+            }
+            var product = await dbp.Products.FindAsync(id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            return View(product);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> PostDeleteProduct(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("ProductList");
+            }
+            var product = await dbp.Products.FindAsync(id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            dbp.Products.Remove(product);
+            dbc.SaveChanges();
+            return RedirectToAction("ProductList");
+        }
+
+        public ActionResult ContactList()
+        {
+            return View(dbc.Contacts.ToList());
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> DeleteContact(int? id)
+        {
+            if(id == null)
+            {
+                return RedirectToAction("ContactList");
+            }
+            var contact = await dbc.Contacts.FindAsync(id);
+            if(contact == null)
+            {
+                return HttpNotFound();
+            }
+            return View(contact);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> PostDeleteContact(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("ContactList");
+            }
+            var contact = await dbc.Contacts.FindAsync(id);
+            if (contact == null)
+            {
+                return HttpNotFound();
+            }
+            dbc.Contacts.Remove(contact);
+            dbc.SaveChanges();
+            return RedirectToAction("ContactList");
+        }
+
         public ActionResult EditAccounts()
         {
             var users = UserManager.Users;
@@ -79,7 +157,6 @@ namespace mBikeEcommerce.Controllers
         [HttpGet]
         public async Task<ActionResult> Delete(string id)
         {
-            System.Diagnostics.Debug.WriteLine(id);
             var user = await UserManager.FindByIdAsync(id);
             return View(user);
         }
@@ -180,11 +257,6 @@ namespace mBikeEcommerce.Controllers
             }
 
             return RedirectToAction("EditAccounts");
-        }
-
-        public ActionResult ProductList()
-        {
-            return View();
         }
     }
 

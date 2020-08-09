@@ -36,7 +36,7 @@
     </div>
 </div>
 <div class="grey-card">
-    
+    @Html.ValidationSummary()
     @using(Html.BeginForm("Contact", "Home", FormMethod.Post))
     {
         <div class="contactname">

@@ -29,5 +29,9 @@ namespace mBikeEcommerce.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<mBikeEcommerce.Models.Contact> Contacts { get; set; }
+
+        public System.Data.Entity.DbSet<mBikeEcommerce.Models.Product> Products { get; set; }
     }
 }

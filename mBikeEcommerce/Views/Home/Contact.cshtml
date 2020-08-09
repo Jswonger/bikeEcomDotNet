@@ -1,4 +1,6 @@
-﻿@{
+﻿@model mBikeEcommerce.Models.Contact
+
+@{
     ViewBag.Title = "Contact";
 }
 
@@ -34,7 +36,9 @@
     </div>
 </div>
 <div class="grey-card">
-    <form action="/contact" method="POST">
+    
+    @using(Html.BeginForm("Contact", "Home", FormMethod.Post))
+    {
         <div class="contactname">
             <label for="name">Full Name</label><br>
             <input type="text" name="name" id="name" value="" required>
@@ -44,9 +48,9 @@
             <input type="email" name="email" id="email" value="" required>
         </div>
         <div class="contactarea">
-            <label for="desc">What can we help you with?</label><br>
-            <textarea name="desc" id="desc" required></textarea>
+            <label for="description">What can we help you with?</label><br>
+            <textarea name="description" id="description" required></textarea>
         </div>
         <button class="success-btn" type="submit">Send Infomation</button>
-    </form>
+    }
 </div>

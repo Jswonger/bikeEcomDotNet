@@ -181,6 +181,11 @@ namespace mBikeEcommerce.Controllers
 
             return RedirectToAction("EditAccounts");
         }
+
+        public ActionResult ProductList()
+        {
+            return View();
+        }
     }
 
     

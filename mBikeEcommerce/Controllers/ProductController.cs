@@ -25,12 +25,10 @@ namespace mBikeEcommerce.Controllers
         {
             if (cond == "brand")
             {
-                System.Diagnostics.Debug.WriteLine(name);
                 List<Product> filteredProducts = db.Products.Where(p => p.brand == name).ToList();
                 return View("Index", filteredProducts);
             }else if (cond == "type")
             {
-                System.Diagnostics.Debug.WriteLine(name);
                 List<Product> filteredProducts = db.Products.Where(p => p.type == name).ToList();
                 return View("Index", filteredProducts);
             }else
